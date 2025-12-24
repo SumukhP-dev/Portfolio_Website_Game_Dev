@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   NgbCarousel,
@@ -9,7 +10,7 @@ import {
 
 @Component({
   selector: 'app-aherosjourney',
-  imports: [NgbCarouselModule, FormsModule],
+  imports: [CommonModule, NgbCarouselModule, FormsModule],
   templateUrl: './a-heros-journey.component.html',
 })
 export class AherosjourneyComponent {
@@ -21,6 +22,16 @@ export class AherosjourneyComponent {
     '/images/game-dev/a-heros-journey-game/IndoorsImage.png',
     '/images/game-dev/a-heros-journey-game/Scenario1.png',
     '/images/game-dev/a-heros-journey-game/Scenario2.png',
+  ];
+
+  altTexts = [
+    'A Hero\'s Journey RPG - Start Screen',
+    'A Hero\'s Journey RPG - Indoors Scene',
+    'A Hero\'s Journey RPG - NPC Dialogue',
+    'A Hero\'s Journey RPG - Outdoors Scene',
+    'A Hero\'s Journey RPG - Indoors Scene',
+    'A Hero\'s Journey RPG - Scenario 1',
+    'A Hero\'s Journey RPG - Scenario 2',
   ];
 
   paused = false;

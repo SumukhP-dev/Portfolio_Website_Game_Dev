@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   NgbCarousel,
@@ -9,7 +10,7 @@ import {
 
 @Component({
   selector: 'app-averysadventure',
-  imports: [NgbCarouselModule, FormsModule],
+  imports: [CommonModule, NgbCarouselModule, FormsModule],
   templateUrl: './averys-adventure.component.html',
 })
 export class AverysadventureComponent {
@@ -18,6 +19,13 @@ export class AverysadventureComponent {
     '/images/game-dev/averys-adventure/BeginningImage.png',
     '/images/game-dev/averys-adventure/MidwayImage.png',
     '/images/game-dev/averys-adventure/WinImage.png',
+  ];
+
+  altTexts = [
+    'Avery\'s Adventure - Start Screen',
+    'Avery\'s Adventure - Beginning Level',
+    'Avery\'s Adventure - Midway Level',
+    'Avery\'s Adventure - Win Screen',
   ];
 
   paused = false;

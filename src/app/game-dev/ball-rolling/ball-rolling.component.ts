@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   NgbCarousel,
@@ -9,7 +10,7 @@ import {
 
 @Component({
   selector: 'app-ballrollinggame',
-  imports: [NgbCarouselModule, FormsModule],
+  imports: [CommonModule, NgbCarouselModule, FormsModule],
   templateUrl: './ball-rolling.component.html',
 })
 export class BallrollingComponent {
@@ -18,6 +19,13 @@ export class BallrollingComponent {
     '/images/game-dev/rolling-ball-game/StartImage.png',
     '/images/game-dev/rolling-ball-game/WinImage.png',
     '/images/game-dev/rolling-ball-game/LoseImage.png',
+  ];
+
+  altTexts = [
+    'Unity Ball Rolling Game - Game Scene',
+    'Unity Ball Rolling Game - Start Screen',
+    'Unity Ball Rolling Game - Win Screen',
+    'Unity Ball Rolling Game - Lose Screen',
   ];
 
   paused = false;

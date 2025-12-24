@@ -1,45 +1,81 @@
-<body class="bg-[#0B0C10] text-[#66FCF1] p-5">
-  <div class="flex items-center justify-center p-3 text-5xl mb-10">
-    <h1>A Hero's Journey RPG</h1>
+<div class="bg-[#0B0C10] text-[#C5C6C7] p-5 font-sans">
+  <!-- Title -->
+  <div class="flex items-center justify-center p-3 mb-10">
+    <h1
+      class="text-5xl font-extrabold text-[#66FCF1] drop-shadow-lg tracking-wide"
+    >
+      A Hero's Journey RPG
+    </h1>
   </div>
-  <div class="ml-10 mr-10">
-    <a
-      class="btn btn-primary flex justify-center items-center mb-2"
-      href="/game-files/A_Heros_Journey_RPG.zip"
-      >Download game files</a
-    >
-    <a
-      class="btn btn-primary flex justify-center items-center mb-4"
-      target="_blank"
-      href="https://github.com/SumukhP-dev/A_Heros_Journey_RPG"
-      >Link to Github Repository</a
-    >
-    <div class="">
-      <ngb-carousel
-        #carousel
-        [interval]="1000"
-        [pauseOnHover]="pauseOnHover"
-        [pauseOnFocus]="pauseOnFocus"
-        (slide)="onSlide($event)"
-      >
-        @for (img of images; track img; let i = $index) {
-        <ng-template ngbSlide>
-          <div
-            class="picsum-img-wrapper flex flex-row min-h-screen justify-center items-center"
-          >
-            <img [src]="img" alt="My image {{ i + 1 }} description" />
-          </div>
-        </ng-template>
-        }
-      </ngb-carousel>
 
-      <hr />
+  <!-- Project Description -->
+  <div class="ml-5 mr-5 sm:ml-10 sm:mr-10 p-5">
+    <div
+      class="bg-[#1F2833] p-6 rounded-lg shadow-md leading-relaxed text-lg border border-[#45A29E] border-opacity-30"
+    >
+      <p class="mx-4">
+        An immersive
+        <span class="text-[#66FCF1] font-bold">RPG adventure game</span>
+        built with
+        <span class="font-semibold text-[#66FCF1]">RPG Maker VX</span>.
+        Features
+        <span class="font-semibold text-[#66FCF1]">engaging storylines</span>,
+        <span class="font-semibold text-[#66FCF1]">character interactions</span>,
+        and
+        <span class="font-semibold text-[#66FCF1]">multiple scenarios</span>
+        that take players through an epic journey with
+        <span class="font-semibold text-[#66FCF1]">rich dialogue</span>
+        and
+        <span class="font-semibold text-[#66FCF1]">exploration mechanics</span>.
+      </p>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
-</body>
 
+  <!-- Links Section -->
+  <div class="ml-5 mr-5 sm:ml-10 sm:mr-10 flex flex-col items-center">
+    <a
+      href="/game-files/A_Heros_Journey_RPG.zip"
+      role="button"
+      class="w-full sm:w-auto bg-[#45A29E] hover:bg-[#66FCF1] text-[#0B0C10] font-semibold py-2 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 mb-3 text-center"
+    >
+      📥 Download Game Files
+    </a>
+
+    <a
+      href="https://github.com/SumukhP-dev/A_Heros_Journey_RPG"
+      target="_blank"
+      class="w-full sm:w-auto bg-[#1F2833] hover:bg-[#66FCF1] text-[#C5C6C7] font-semibold py-2 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105 mb-5 text-center"
+    >
+      💻 View on GitHub
+    </a>
+  </div>
+
+  <!-- Carousel Section -->
+  <div class="ml-5 mr-5 sm:ml-10 sm:mr-10 p-5">
+    <ngb-carousel
+      #carousel
+      [interval]="2000"
+      [pauseOnHover]="pauseOnHover"
+      [pauseOnFocus]="pauseOnFocus"
+      (slide)="onSlide($event)"
+      class="mb-6"
+    >
+      @for (img of images; track img; let i = $index) {
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper flex justify-center items-center">
+          <img
+            [src]="img"
+            [alt]="altTexts[i]"
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+      </ng-template>
+      }
+    </ngb-carousel>
+
+    <hr class="border-[#45A29E] opacity-40 mb-6" />
+  </div>
+
+  <!-- Spacing at bottom -->
+  <div class="h-32"></div>
+</div>
